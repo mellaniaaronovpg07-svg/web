@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar ToDesktop Clone</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="greenearth.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="logo-icon">
+                    <i data-lucide="box"></i>
+                </div>
+                <span class="brand-text">GreenEarth</span>
+            </a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        Products <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">
+                            <div class="item-icon">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <div class="item-content">
+                                <h4>Kedaruratan</h4>
+                                <p>kedaruratan yang terjadi di indonesia saat ini</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <div class="item-icon">
+                                <i data-lucide="layout"></i>
+                            </div>
+                            <div class="item-content">
+                                <h4>Inovasi</h4>
+                                <p>inovasi untuk mencegah</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-footer">
+                            <a href="#" class="footer-link">
+                                <i data-lucide="columns"></i> Compare products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="nav-item">Docs</a>
+                <a href="#" class="nav-item">Change log</a>
+                <a href="#" class="nav-item">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://kitabisa.com/" class="btn-login">Join Us</a>
+            </div>
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            <i data-lucide="menu" id="hamburger-icon"></i>
+        </button>
+    </nav>
+    <script>
+        lucide.createIcons();
+
+        const hamburgerBtn = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-links');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            const isOpen = navMenu.classList.contains('active');
+            hamburgerBtn.innerHTML = isOpen 
+                ? '<i data-lucide="x"></i>' 
+                : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
